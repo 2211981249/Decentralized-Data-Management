@@ -3,7 +3,7 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import swipperImage from "/src/assets/Swipper-Image.jpg"
 import swipperImage2 from "/src/assets/sliderImage-3.webp"
-import swipperImage3 from "/src/assets/sliderImage-2.webp";
+import swipperImage3 from "/src/assets/sliderImage.jpg";
 
 const spanStyle = {
   padding: '20px',
