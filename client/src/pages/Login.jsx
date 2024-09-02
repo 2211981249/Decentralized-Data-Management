@@ -67,10 +67,9 @@ const Login = () => {
           alt="Registration"
           className="object-cover w-full h-full"
           style={{
-            marginTop: "5rem",
-            marginBottom: "5rem",
+            marginTop: "3rem",
             marginRight: "5rem",
-            borderRadius: "40%",
+            borderRadius: "50%",
           }}
         />
       </div>

@@ -6,8 +6,15 @@ import BlockLogin from "../pages/BlockLogin";
 import UploadDocument from "../pages/UploadDocument";
 import Card from "../pages/Card";
 import { toast, ToastContainer } from "react-toastify";
+import { useAuth } from "../store/auth";
 
 function App() {
+
+  const { user, userAuthentication } = useAuth();
+  useEffect(()=>{
+    userAuthentication();
+  },[]);
+
   const [state, setState] = useState({
     provider: null,
     signer: null,
@@ -80,6 +87,11 @@ function App() {
   }, [state.contract]);
 
   return (
+
+    <>
+    <h2 className="text-xl sm:text-xl md:text-xl lg:text-2xl font-bold text-gray-80 dark:text-dark-50 mb-4 text-center">
+  Welcome @ {user?.username}😊
+</h2>
     <div>
       <ToastContainer />
       {/* If logged in, show account details, otherwise show BlockLogin */}
@@ -111,7 +123,79 @@ function App() {
           </div>
         </div>
       )}
+
     </div>
+
+    <div className="flex flex-wrap justify-center gap-4 mt-8">
+
+  <div className="bg-white white:bg-gray-800 rounded-lg shadow-lg p-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+    <h1>Welcome</h1>
+    <h3 className="text-xl font-semibold text-dark-800 dark:text-gray-200 mb-2" style={{color:"black"}}>
+      "hello"
+    </h3>
+    <p className="text-gray-600 dark:text-gray-400 break-words">
+      dhagsdghasgdhagsdgagsdgahdgagsdhgahdgagsdgadhgasgdgj
+    </p>
+    <button
+      className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200"
+      onClick={() => handleClick(indexValue)}
+    >
+      View Details
+    </button>
+  
+    {/* Conditionally render the document */}
+  </div>
+  
+
+
+
+
+
+
+  <div className="bg-white white:bg-gray-800 rounded-lg shadow-lg p-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4" >
+  <h1>Welcome</h1>
+  <h3 className="text-xl font-semibold text-dark-800 dark:text-gray-200 mb-2" style={{color:"black"}}>
+    "hello"
+  </h3>
+  <p className="text-gray-600 dark:text-gray-400 break-words">
+    dhagsdghasgdhagsdgagsdgahdgagsdhgahdgagsdgadhgasgdgj
+  </p>
+  <button
+    className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200"
+    onClick={() => handleClick(indexValue)}
+  >
+    View Details
+  </button>
+
+  {/* Conditionally render the document */}
+</div>
+
+
+
+    <div className="bg-white white:bg-gray-800 rounded-lg shadow-lg p-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+    <h1>Welcome</h1>
+    <h3 className="text-xl font-semibold text-dark-800 dark:text-gray-200 mb-2" style={{color:"black"}}>
+      "hello"
+    </h3>
+    <p className="text-gray-600 dark:text-gray-400 break-words">
+      dhagsdghasgdhagsdgagsdgahdgagsdhgahdgagsdgadhgasgdgj
+    </p>
+    <button
+      className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200"
+      onClick={() => handleClick(indexValue)}
+    >
+      View Details
+    </button>
+  
+    {/* Conditionally render the document */}
+  </div>
+  
+
+
+  
+    
+    </div>
+    </>
   );
 }
 

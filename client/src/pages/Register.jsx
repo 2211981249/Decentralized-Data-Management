@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
 import { toast, ToastContainer } from "react-toastify";
 import { NavLink } from "react-router-dom";
-import registerImage from "/src/assets/Register-Image.jpg";
+// import registerImage from "/src/assets/Register-Image.jpg";
+import registerImage from "/src/assets/registerImage.avif";
 import { z } from "zod";
 
 // Zod Schema for validation
@@ -107,10 +108,10 @@ const Register = () => {
           alt="Registration"
           className="object-cover w-full h-full"
           style={{
-            marginTop: "6rem",
-            marginBottom: "5rem",
-            marginRight: "5rem",
-            borderRadius: "40%",
+            marginTop: "7rem",
+             height:"30rem",
+            borderRadius:"10%",
+            
           }}
         />
       </div>
