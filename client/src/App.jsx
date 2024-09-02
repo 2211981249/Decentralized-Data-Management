@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "./store/auth.jsx";
 import Footer from "./pages/Footer.jsx";
 import Profile from "./pages/Profile.jsx";
+import ErrorPage from "./pages/Error.jsx";
 
 const App = () => {
   const { isLoggedIn } = useAuth();
@@ -48,6 +49,8 @@ const App = () => {
             path="/profile"
             element={log ? <Profile /> : <Navigate to="/login" />}
           />
+
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
