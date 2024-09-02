@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     const initializeBlockchain = async () => {
-      const contractAddress = "0x39Efd7D1E8CfDE3106dcDe3A527082b7e238173F";
+      const contractAddress = "0x5FB4c864863615ee38a33021615157C129008922";
       const contractABI = abi.abi;
 
       try {
@@ -65,6 +65,7 @@ function App() {
       setDocuments(docs);
 
       const email = localStorage.getItem("email");
+      console.log(email)
       const data = await axios.get(`http://localhost:7000/api/auth/get-document?email=${email}`);
       setImageDoc(data.data.documents);
     } catch (error) {
