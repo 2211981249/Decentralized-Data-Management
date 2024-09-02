@@ -46,7 +46,7 @@ const Login = () => {
         setTimeout(() => {
           navigate("/home");
           window.location.reload();
-        }, 2000);
+        }, 800);
       } else {
         toast.error("Invalid Email and Password");
       }

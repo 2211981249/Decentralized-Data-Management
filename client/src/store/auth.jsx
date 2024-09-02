@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
 
   //Logout Funcanality here
 
-  const LogoutUser = () => {
+  const LogoutUser = async() => {
     setToken("");
     return localStorage.removeItem("token");
   };

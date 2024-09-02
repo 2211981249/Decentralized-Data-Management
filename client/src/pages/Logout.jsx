@@ -1,16 +1,27 @@
-import { useEffect } from "react"
-import { Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
+import { toast, ToastContainer } from "react-toastify";
 
+export const Logout = () => {
+  const { LogoutUser } = useAuth();
+  const navigate = useNavigate();
 
-export const Logout=()=>{
+  useEffect(() => {
+    const handleLogout = async () => {
+      const data = await LogoutUser();
+      setTimeout(() => {
+        navigate("/login");
+        window.location.reload();
+      }, 600);
+    };
 
-    const {LogoutUser}=useAuth();
+    handleLogout();
+  }, []);
 
-
-   useEffect(()=>{
-    LogoutUser();
-   },[LogoutUser]);
-
-   return <Navigate to="/login" />
+  return (
+    <>
+      <ToastContainer />
+    </>
+  );
 };
