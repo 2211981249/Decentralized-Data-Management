@@ -41,7 +41,9 @@ const Login = () => {
       if (response.ok) {
         toast.success("Login Successful");
         const res_data = await response.json();
+        console.log(res_data)
         storetokenInLS(res_data.token);
+        localStorage.setItem("email",res_data.email)
         setUser({ email: "", password: "" });
         setTimeout(() => {
           navigate("/home");

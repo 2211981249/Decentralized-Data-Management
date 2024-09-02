@@ -64,7 +64,7 @@ function App() {
       const docs = await state.contract.getDocuments();
       setDocuments(docs);
 
-      const email = "a@gmail.com";
+      const email = localStorage.getItem("email");
       const data = await axios.get(`http://localhost:7000/api/auth/get-document?email=${email}`);
       setImageDoc(data.data.documents);
     } catch (error) {

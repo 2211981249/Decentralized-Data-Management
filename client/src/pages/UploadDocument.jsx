@@ -62,11 +62,12 @@ const UploadDocument = ({ state }) => {
         console.log(tx)
         await tx.wait();
         console.log("upload");
+        const email = localStorage.getItem("email")
 
         const formData = new FormData();
         formData.append("file", file);
         formData.append("contentType", contentType);
-        formData.append("email", "a@gmail.com");
+        formData.append("email",email);
         formData.append("hex", tx.hash);
 
         const config = {
